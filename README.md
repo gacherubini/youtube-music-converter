@@ -18,10 +18,12 @@ DATABASE_URL=postgresql+psycopg2://app:app@db:5432/yt2mp3
 
 ### 3. Subir containers
 docker-compose build
+#
 docker-compose up
 
 ### 4. Rodar migrations
 docker-compose run --rm api python -m alembic revision --autogenerate -m "init schema"
+#
 docker-compose run --rm api python -m alembic upgrade head
 
 ### 5. Testar com curl
